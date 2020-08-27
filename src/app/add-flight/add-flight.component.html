@@ -1,0 +1,143 @@
+<div>
+<h3>{{name}}</h3>
+<button type="button" (click)="logout()">Logout</button>
+<button type="button" (click)="showordelete()">Show all Flights and cancel</button>
+</div>
+<div><h2><u>Add New Flight</u></h2></div>
+<div class="container">
+    <form (ngSubmit)="getFlights()" method="POST" ngNativeValidate>
+      <div class="row">
+        <div class="col-25">
+          <label for="flightNumber">Flight Number</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="flightNumber" name="flightNumber" placeholder="Flight Name" [(ngModel)]="newflight.flightNumber" required>
+          {{newflight.flightNumber}}
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="source">Source</label>
+        </div>
+        <div class="col-75">
+          <select id="source" name="source" [(ngModel)]="newflight.source" required>
+            <option value="Delhi">Delhi</option>
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Dehradun">Dehradun</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Patna">Patna</option>
+            <option value="Lucknow">Lucknow</option>
+          </select>
+          {{newflight.source}}
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="destination">Destination</label>
+        </div>
+        <div class="col-75">
+          <select id="destination" name="destination" [(ngModel)]="newflight.destination" required>
+            <option>Delhi</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Dehradun">Dehradun</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Patna">Patna</option>
+            <option value="Lucknow">Lucknow</option>
+          </select>
+          {{newflight.destination}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="duration">Duration</label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="duration" name="duration" step="0.01" [(ngModel)]="newflight.duration" required>
+          {{newflight.duration}}
+        </div>
+    </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="departureschedule">Departure Schedule</label>
+        </div>
+        <div class="col-75">
+        <input type="datetime-local" id="departureschedule" name="departureschedule" value="2014-12-08T15:43:00" [(ngModel)]="newflight.departureSchedule" required>
+      {{newflight.departureSchedule}}
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+          <label for="arrivalschedule">Arrival Schedule</label>
+        </div>
+        <div class="col-75">
+        <input type="datetime-local" id="arrivalschedule" name="arrivalschedule" value="2014-12-08T15:43:00" [(ngModel)]="newflight.arrivalSchedule" required>
+      {{newflight.arrivalSchedule}}
+      </div>
+    </div>
+     
+    <div class="row">
+        <div class="col-25">
+          <label for="cabin">Cabin</label>
+        </div>
+        <div class="col-75">
+          <select id="cabin" name="cabin" placeholder="cabin" [(ngModel)]="newflight.cabin" required>
+            <option value="business">Business</option>
+            <option value="economy">Economy</option>
+          </select>
+          {{newflight.cabin}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="economyfare">Initial Economy Fare</label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="economyfare" name="economyfare" [(ngModel)]="newflight.initialEconomyfare" required>
+        {{newflight.initialEconomyfare}}
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="businessfare">Initial Business Fare</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="businessfare" name="businessfare" [(ngModel)]="newflight.initialBusinessfare" required>
+      {{newflight.initialBusinessfare}}
+      </div>
+  </div>
+    
+        <div class="col-70">
+      <div class="row" style="float:center">
+        <input type="submit" value="Submit" style="text-align:center">
+      </div>
+        </div>
+        
+
+    </form>
+  </div>
+
+
+
+

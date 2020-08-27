@@ -1,0 +1,361 @@
+<div>
+  <form>
+  <div class="plane">
+    <div class="cockpit">
+      <h1>Please select a seat</h1>
+      <h3>Total fare is: {{totalfare}}</h3>
+    </div>
+    <div class="exit exit--front fuselage">
+      
+    </div>
+    <ol class="cabin fuselage">
+      <li class="row row--1">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button" (click)="generateticket(1)" [disabled]=dis[1] >1</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(2)" [disabled]=dis[2]>2</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(3)" [disabled]=dis[3]>3</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button"  (click)="generateticket(4)"  [disabled]=dis[4]>4</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(5)" [disabled]=dis[5]>5</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(6)" [disabled]=dis[6]>6</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+    
+      
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="row row--2">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button"  (click)="generateticket(7)" [disabled]=dis[7]>7</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(8)" [disabled]=dis[8]>8</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(9)" [disabled]=dis[9]>9</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button"  (click)="generateticket(10)" [disabled]=dis[10]>10</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(11)" [disabled]=dis[11]>11</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(12)" [disabled]=dis[12]>12</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="row row--3">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button"  (click)="generateticket(13)" [disabled]=dis[13]>13</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(14)" [disabled]=dis[14]>14</button>
+          </li>
+          <li class="seat">
+            <button type="button"   (click)="generateticket(15)" [disabled]=dis[15]>15</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button"   (click)="generateticket(16)" [disabled]=dis[16]>16</button>
+          </li>
+          <li class="seat">
+            <button type="button"   (click)="generateticket(17)" [disabled]=dis[17]>17</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(18)" [disabled]=dis[18]>18</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="row row--4">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button"  (click)="generateticket(19)" [disabled]=dis[19]>19</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(20)" [disabled]=dis[20]>20</button>
+          </li>
+          <li class="seat">
+            <button type="button"   (click)="generateticket(21)" [disabled]=dis[21]>21</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button"  (click)="generateticket(22)" [disabled]=dis[22]>22</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(23)" [disabled]=dis[23]>23</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(24)" [disabled]=dis[24]>24</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="row row--5">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button"  (click)="generateticket(25)"  [disabled]=dis[25]>25</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(26)" [disabled]=dis[26]>26</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(27)" [disabled]=dis[27]>27</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button"   (click)="generateticket(28)" [disabled]=dis[28]>28</button>
+          </li>
+          <li class="seat">
+            <button type="button"   (click)="generateticket(29)" [disabled]=dis[29]>29</button>
+          </li>
+          <li class="seat">
+            <button type="button"  (click)="generateticket(30)"  [disabled]=dis[30]>30</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="row row--6">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button" (click)="generateticket(31)" [disabled]=dis[31]>31</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(32)" [disabled]=dis[32]>32</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(33)" [disabled]=dis[33]>33</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button" (click)="generateticket(34)" [disabled]=dis[34]>34</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(35)" [disabled]=dis[35]>35</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(36)" [disabled]=dis[36]>36</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="row row--7">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button" (click)="generateticket(37)" [disabled]=dis[37]>37</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(38)" [disabled]=dis[38]>38</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(39)" [disabled]=dis[39]>39</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button" (click)="generateticket(40)" [disabled]=dis[40]>40</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(41)" [disabled]=dis[41] >41</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(42)" [disabled]=dis[42]>42</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="row row--8">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button" (click)="generateticket(43)" [disabled]=dis[43]>43</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(44)" [disabled]=dis[44]>44</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(45)" [disabled]=dis[45]>45</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button" (click)="generateticket(46)" [disabled]=dis[46]>46</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(47)" [disabled]=dis[47]>47</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(48)" [disabled]=dis[48]>48</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="row row--9">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button" (click)="generateticket(49)" [disabled]=dis[49]>49</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(50)" [disabled]=dis[50]>50</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(51)" [disabled]=dis[51]>51</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button" (click)="generateticket(52)" [disabled]=dis[52]>52</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(53)" [disabled]=dis[53]>53</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(54)" [disabled]=dis[54]>54</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="row row--10">
+        <ol class="seats" type="A">
+          <li class="seat">
+            <button type="button" (click)="generateticket(55)" [disabled]=dis[55]>55</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(56)" [disabled]=dis[56]>56</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(57)" [disabled]=dis[57]>57</button>
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <li class="seat">
+            <button type="button" (click)="generateticket(58)" [disabled]=dis[58]>58</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(59)" [disabled]=dis[59]>59</button>
+          </li>
+          <li class="seat">
+            <button type="button" (click)="generateticket(60)" [disabled]=dis[60]>60</button>
+          </li>
+        </ol>
+      </li>
+      &nbsp;
+      &nbsp;
+      &nbsp; 
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+    </ol></div>
+    <div class="exit exit--back fuselage">
+    </div>
+  
+    <div>
+      <h4>Selected Seats-- In case you want to select again, Reset Below.</h4>
+      <label *ngFor="let x of selectedSeats;">
+        <h3>{{x}}</h3>
+      </label>
+    </div>
+
+    <div>
+     <button type="submit" class="ball" (click)="goToTicket()">Submit</button>
+      <button type="button" class="ball" (click)="resetFunction()">Reset</button>
+    </div>
+    </form>
+   <router-outlet></router-outlet>
+   </div>

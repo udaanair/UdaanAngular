@@ -1,0 +1,145 @@
+<div class="bg-img">
+  <head>
+SEARCH FLIGHT
+  </head>
+<form (ngSubmit)="getFlights()" method="POST">
+<div class="search">
+  
+
+  <h1>SEARCH FLIGHT</h1>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    
+   
+  <div class="row">
+  <div class="col-25">
+  <label for="typeoftrip"><h3>TYPE OF TRIP</h3></label>
+  </div>
+  <div class="col-75">
+<h4><input type="radio"  name="flightType" >
+<label>ONE WAY</label>
+<input type="radio"  name="flightType" >
+<label>ROUND TRIP</label></h4><br>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-25"><br>
+    <label for="source"><h3>SOURCE STATION</h3></label>
+  </div>
+    <div class="col-75">
+    <input list="source" placeholder="From" name="source" [(ngModel)]=sp.source>
+    <datalist id="source">
+        <option value="Delhi">
+        <option value="Mumbai">
+        <option value="Chennai">
+        <option value="Bangalore">
+        <option value="Dehradun">
+        <option value="Kolkata">
+        <option value="Hyderabad">
+        <option value="Chandigarh">
+        <option value="Goa">
+        <option value="Patna">
+        <option value="Lucknow">
+      </datalist>
+      <label>{{sp.source}}</label>
+    </div>
+</div>
+<div class="row">
+  <div class="col-25"><br>
+  <label for="destination"><h3>DESTINATION STATION</h3></label>
+  </div>
+  <div class="col-75">
+    <input list="Destination" placeholder="To" name="destination" style="background-color:whitesmoke" [(ngModel)]="sp.destination">
+    <datalist id="Destination">
+    <option value="Delhi">
+        <option value="Mumbai">
+        <option value="Chennai">
+        <option value="Bangalore">
+        <option value="Dehradun">
+        <option value="Kolkata">
+        <option value="Hyderabad">
+        <option value="Chandigarh">
+        <option value="Goa">
+        <option value="Patna">
+        <option value="Lucknow">
+        </datalist>
+      <label>{{sp.destination}}</label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-25"><br>
+    <label for="date"><h3>DATE</h3></label>
+  </div>
+    <div class="col-75">
+    <input type="date" placeholder="From" name="dateOfFlight" style="background-color:whitesmoke" [(ngModel)]=sp.dateOfFlight>
+      <label>{{sp.dateOfFlight}}</label>
+    </div>
+</div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label for="numberOfPassengers"><h3>NUMBER OF PASSENGERS</h3></label>
+      </div>
+        <div class="col-75">
+        <input type="number" name="numberOfPassengers"  max = "6" [(ngModel)]=sp.numberOfPassengers>
+        
+      <label>{{sp.numberOfPassengers}}</label>
+  </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <br>
+        <label for="cabin"><h3>CABIN</h3></label>
+      </div>
+        <div class="col-75">
+    <input list="cabin" placeholder="Cabin" name="cabinSelected" [(ngModel)]=sp.cabinSelected><br><br>
+    <datalist id="cabin">
+        <option value="economy">
+        <option value="business">
+      </datalist>
+      <label>{{sp.cabinSelected}}</label>
+      <br>
+    </div>
+  </div>
+    <button type="submit" class = "him">Search</button> 
+   
+</div> 
+
+</form>
+
+
+
+<br>
+<br>
+
+<div class = "bing">
+
+  <br>
+  <br>
+<table *ngIf="data" border="1" align="center">
+    <tr>
+      <th>Flight Number</th>
+      <th>Duration</th>
+      <th>Departure Schedule</th>
+      <th>Arival Schedule</th>
+      <th>Economy Fare</th>
+      <th>Business Fare</th>
+      <th>Select</th>
+    </tr>
+    <tr *ngFor="let d of data">
+      <td>{{ d.flightNumber }}</td>
+      <td>{{ d.duration }}</td>
+      <td>{{ d.departureSchedule }}</td>
+      <td>{{ d.arrivalSchedule }}</td>
+      <td>{{ d.initialEconomyfare }}</td>
+      <td>{{ d.initialBusinessfare }}</td>
+       <td><button (click)= "selectFlight(d)">Check this Flight</button></td>
+  </table>
+    <br><br>
+    <router-outlet></router-outlet>
+    <br>
+    <br>
+</div>
+</div>

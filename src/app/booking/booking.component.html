@@ -1,0 +1,22 @@
+<div><h2><u>PASSENGER DETAILS</u></h2></div>
+
+<br>
+{{d.flightId}}
+
+<div>
+<form >
+    <label *ngFor="let x of Np;">
+        <label>Passenger {{x}}: </label><br>
+        <label>NAME: </label><input type="text" id="name" name="name" [(ngModel)]=passengerList[x].name><br>
+         <br>
+         {{passengerList[x].name}}
+        <label>AGE: </label><input type="number" id="quantity" name="quantity"  min="1" max="100" [(ngModel)]=passengerList[x].age><br>
+        {{passengerList[x].age}}
+    </label>
+  
+    <br>
+   <br>
+    <input type="submit" value="Submit"  (click)= "passenger()">
+</form>
+<router-outlet></router-outlet>
+</div>

@@ -1,0 +1,20 @@
+<div>
+    <div class="imgcontainer">
+      <img src="assets/images/avatar.png" alt="Avatar" class="avatar">
+    </div>
+    
+    <h2><u>ADMIN LOGIN</u></h2>
+  <form (ngSubmit)="addFlights()" method="POST" ngNativeValidate>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]="admin.userName" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="admin.password" required>
+  
+      <button type="submit">Login</button>
+      
+    </div>
+  
+  </form>
+  </div>
