@@ -1,13 +1,13 @@
 *{
-    margin: 0;
-    padding:0;
+  margin: 0;
+  padding:0;
 font-family: Century Gothic;}
 .search{
-    padding:16px;
-    text-align:center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    color: black;
+  padding:16px;
+  text-align:center;
+  font-family:"Times New Roman", Times, serif;
+  font-weight: bold;
+  color: black;
 }
 * {box-sizing: border-box}
 h2
@@ -17,103 +17,196 @@ font:bold;
 }
 
 .bing{
-    padding-left: 2%;
-    background-image: url("src/assets/images/tbg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  padding-left: 2%;
+  background-image: url("src/assets/images/neww.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .button{
-    padding: 16px 32px;
-    text-align:center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    background-color:green;
+  padding: 16px 32px;
+  text-align:center;
+  font-family:"Times New Roman", Times, serif;
+  font-weight: bold;
+  background-color:green;
 }
 input[type=radio]{
-    width:5%;
-    padding:15px;
-    margin:5px 0 22px 0;
+  width:5%;
+  padding:15px;
+  margin:5px 0 22px 0;
 }
 input[list=cabin], input[list=source], input[list=Destination], input[type=date], input[type=number] {
-    width: 80%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-  }
-
-  .pass{
-       width: 80%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-  }
-  /* Floating column for labels: 25% width */
-  .col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-  }
-  
-  /* Floating column for inputs: 75% width */
-  .col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    padding: 5px 10px;
-    text-align:center;
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  input[type=text]:focus, input[type=password]:focus {
-    background-color:black;
-    outline: none;
-  }
-  .him
-  {
-  background-image: url("src/assets/images/tbg.jpg");
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
   border: none;
-  color: white;
+  background: #f1f1f1;
+}
+
+.pass{
+     width: 80%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+}
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  padding: 5px 10px;
+  text-align:center;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color:black;
+  outline: none;
+}
+.him
+{
+background-image: url("src/assets/images/tbg.jpg");
+border: none;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+font-family:"Times New Roman", Times, serif;
+font-weight: bold;
+}
+.him2
+{
+background-image: url("src/assets/images/n.jpg");
+border: none;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+font-family:"Times New Roman", Times, serif;
+font-weight: bold;
+}
+.h{
+  background-image: url("src/assets/images/neww.jpeg");
+  border: none;
+  color: black;
   padding: 16px 32px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
-  }
-  
-   .bg-img {
-      /* The image used */
-      background-image: url("src/assets/images/n.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      height:117vh;
+}
+
+ .bg-img {
+    /* The image used */
+    background-image: url("src/assets/images/n.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:117vh;
 }
 
 
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
+  width: 100%;
+
+ color: solid white;
+
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  
+
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+.out
+{
+  border: 20px solid rgba(0, 70, 128, 0.678);
+border-radius: 2.1px;
+width:170%;
+}
+
+
+
+.tick{
+  padding-left:30%;
+  font-family:"Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+/* Large rounded green border */
+.ticket{
+  border: 10px solid rgba(0, 70, 128, 0.678);
+  border-radius: 4.3px;
+  width:170%;
+  background-color: whitesmoke;
+  max-width: 100%;     overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:"Times New Roman", Times, serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 14%;
+  height: 20%;
+  padding: 0 10px;
+  font-family:"Times New Roman", Times, serif;
+  font-weight: bold;
+  max-width: 100%;     overflow-x: hidden;
+  
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;
+  max-width: 100%;     overflow-x: hidden;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
     width: 100%;
-   background-color: lightpink;
-
-   color: solid white;
-
+    display: block;
+    margin-bottom: 20px;
   }
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-    
-
-    border-bottom: 1px solid #ddd;
-  }
-  
-  tr:hover {background-color:#f5f5f5;
-    color: black
 }

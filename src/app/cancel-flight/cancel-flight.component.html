@@ -1,33 +1,33 @@
 <div>
-    <h3>{{name}}</h3>
-    <button type="button" (click)="logout()">Logout</button>
-    <button type="button" (click)="addflight()">Add new Flight</button>
-    </div>
-    <div><h2><u>All Flights</u></h2></div>
-    <table *ngIf="data" border="1" align="center">
-        <tr>
-          <th>Flight Number</th>
-          <th>Source</th>
-          <th>Destination</th>
-          <th>Duration</th>
-          <th>Departure Schedule</th>
-          <th>Arival Schedule</th>
-          <th>Economy Fare</th>
-          <th>Business Fare</th>
-          <th>Economy Seats Left</th>
-          <th>Business Seats Left</th>
-          <th>CLick here to cancel</th>
-        </tr>
-        <tr *ngFor="let d of data">
-          <td>{{ d.flightNumber }}</td>
-          <td>{{ d.source }}</td>
-          <td>{{ d.destination }}</td>
-          <td>{{ d.duration }}</td>
-          <td>{{ d.departureSchedule }}</td>
-          <td>{{ d.arrivalSchedule }}</td>
-          <td>{{ d.initialEconomyfare }}</td>
-          <td>{{ d.initialBusinessfare }}</td>
-          <td>{{ d.economySeatsLeft }}</td>
-          <td>{{ d.businessSeatsLeft }}</td>
-           <td><button (click)= "deleteFlight(d)">Check this Flight</button></td>
-      </table>
+  <h3>{{name}}</h3>
+  <button type="button" class="btn" (click)="logout()">Logout</button>
+  <button type="button" class="btn" (click)="addflight()">Add new Flight</button>
+  </div>
+  <div><h2><u>All Flights</u></h2></div>
+  <table *ngIf="data" border="1" align="center">
+      <tr>
+        <th>Flight Number</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>Duration</th>
+        <th>Departure Schedule</th>
+        <th>Arival Schedule</th>
+        <th>Economy Fare</th>
+        <th>Business Fare</th>
+        <th>Economy Seats Left</th>
+        <th>Business Seats Left</th>
+        <th>CLick here to cancel</th>
+      </tr>
+      <tr *ngFor="let d of data">
+        <td>{{ d.flightNumber }}</td>
+        <td>{{ d.source }}</td>
+        <td>{{ d.destination }}</td>
+        <td>{{ d.duration }}</td>
+        <td>{{ d.departureSchedule }}</td>
+        <td>{{ d.arrivalSchedule }}</td>
+        <td>{{ d.initialEconomyfare }}</td>
+        <td>{{ d.initialBusinessfare }}</td>
+        <td>{{ d.economySeatsLeft }}</td>
+        <td>{{ d.businessSeatsLeft }}</td>
+         <td><button (click)= "deleteFlight(d)" >Cancel</button></td>
+    </table>

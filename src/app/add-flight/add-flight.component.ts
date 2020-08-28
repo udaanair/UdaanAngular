@@ -36,7 +36,7 @@ export class AddFlightComponent implements OnInit {
 
   logout()
   {
-    sessionStorage.setItem("adminname",null);
+    sessionStorage.removeItem("adminname");
     this.router.navigate(['searchflight']);
   }
 

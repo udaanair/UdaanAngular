@@ -4,6 +4,7 @@ import { FlightscanService } from './../flightscan.service';
 import { Router } from '@angular/router';
 import { SeatsAvailable } from './../seatsavailable';
 import { AvailableSeats } from '../availableseats';
+import { SearchParameters } from '../searchparameters';
 
 @Component({
   selector: 'app-customer-booking',
@@ -12,6 +13,8 @@ import { AvailableSeats } from '../availableseats';
 })
 export class CustomerBookingComponent implements OnInit {
  
+  loggedin: boolean=false;
+  name: string;
   totalfare: number;
   pass: passengerClass[]=[];
   sa: SeatsAvailable= new SeatsAvailable();
@@ -19,8 +22,17 @@ export class CustomerBookingComponent implements OnInit {
   d:any;
   ab: AvailableSeats= new AvailableSeats();
   numberOfPassengers: number;
- // seats: string;
+  sp: SearchParameters=new SearchParameters;
+  fare: number;
+  tf: number;
+  len: number[]=[];
+ 
   constructor(private service: FlightscanService,private router: Router) {
+    if(sessionStorage.getItem("username")!=null)
+    {
+      this.name=sessionStorage.getItem("username");
+      this.loggedin=true;
+    }
     sessionStorage.setItem("pnr","not set");
     this.totalfare=Number(sessionStorage.getItem("bookingamount"));
     for(let i=1;i<=60;i++)
@@ -31,20 +43,21 @@ export class CustomerBookingComponent implements OnInit {
     this.d= JSON.parse(sessionStorage.getItem('selectedflight'));
     this.sa.cabinClass=sessionStorage.getItem("cabinType");
     this.sa.flightNumber=this.d.flightId;
-   // alert(this.sa.cabinClass);
-    //alert(this.sa.flightNumber);
+    this.pass= JSON.parse(sessionStorage.getItem('passengerlist')); 
+    this.sp= JSON.parse(sessionStorage.getItem('searchparam'));
+    for (let i = 1; i <= this.numberOfPassengers; i++) {   
+      this.len.push(i);  }
+    
+    
+    this.fare = Number(sessionStorage.getItem('bookingamount'));
+    this.numberOfPassengers = Number(sessionStorage.getItem('numberOfPassengers'));
+    this.tf = this.numberOfPassengers * this.fare;
+   
     this.service.fetchAvailableSeats(this.sa).subscribe(
       data=>{
-        //this.a=data["availableSeats"];
-        //alert(data);
+        
         this.ab=data;
 
-        //alert(this.ab.availableSeats);
-        //this.a=this.ab.availableSeats;
-        //alert(Object.values(data)[0]);
-        //this.data=JSON.stringify(data);
-        //this.seats=Object.values(data)[0];
-        alert(this.ab.availableSeats.length);
         for(let i=0;i<this.ab.availableSeats.length;i++)
          {
             this.dis[this.ab.availableSeats[i]]=false;
@@ -53,6 +66,13 @@ export class CustomerBookingComponent implements OnInit {
     );
 
    }
+
+   logout()
+  {
+    this.loggedin=false;
+    sessionStorage.clear();
+    this.router.navigate(['searchflight']);
+  }
 
    selectedSeats: number[]=[this.numberOfPassengers];
    abc:number;
@@ -81,6 +101,8 @@ export class CustomerBookingComponent implements OnInit {
       }
       else if(this.counter>this.numberOfPassengers)
       {
+       
+       --this.counter;
         alert("Cannot Select More Seats");
       }
     }

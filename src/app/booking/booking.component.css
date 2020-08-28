@@ -1,0 +1,98 @@
+.disp {
+    border-collapse: collapse;
+    width: 70%;
+   border-style: ridge;
+    margin-left: 140px;
+   background: rgb(224, 234, 255);
+   font-family: "Times New Roman", Times, serif;
+   border-radius: 25px;
+
+  }
+  
+  .bor
+  {
+      background-color: rgb(0, 140, 255);
+      border-radius: 45px;
+
+      border-bottom-style: ridge;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    
+
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr{
+    background-color: skyblue;
+  }
+  
+  tr:hover {background-color:#f5f5f5;
+    color: black
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px -14px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  
+  }
+  input[type=text]:focus, input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+   /* Add padding to containers */
+   .container {
+    padding-left:5%;
+    padding-right:3%;
+    border: 3px solid #f1f1f1;
+    width: 20%; 
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    background-color:whitesmoke;
+    border-radius: 2%;
+    
+
+    margin-left: 39%;
+    color:solid black;
+}
+.fl{
+  font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    background-image: url("src/assets/images/n.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+   
+    
+    
+}
+
+
+
+input[type=submit]
+{
+  background-color: gold;
+  padding: 10px 16px;
+  margin: 5px -15px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 32%;
+  margin-left: 70px;
+  color: solid black;
+  
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+ 
+}

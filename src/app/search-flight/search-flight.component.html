@@ -1,3 +1,8 @@
+<div *ngIf="loggedin">
+  <h3>{{name}}</h3>
+  <button type="button" (click)="logout()">Logout</button>
+  </div>
+
 <div class="bg-img">
   <head>
 SEARCH FLIGHT
@@ -10,17 +15,7 @@ SEARCH FLIGHT
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
     
    
-  <div class="row">
-  <div class="col-25">
-  <label for="typeoftrip"><h3>TYPE OF TRIP</h3></label>
-  </div>
-  <div class="col-75">
-<h4><input type="radio"  name="flightType" >
-<label>ONE WAY</label>
-<input type="radio"  name="flightType" >
-<label>ROUND TRIP</label></h4><br>
-</div>
-</div>
+  
 
 <div class="row">
   <div class="col-25"><br>
@@ -41,7 +36,7 @@ SEARCH FLIGHT
         <option value="Patna">
         <option value="Lucknow">
       </datalist>
-      <label>{{sp.source}}</label>
+      
     </div>
 </div>
 <div class="row">
@@ -63,7 +58,7 @@ SEARCH FLIGHT
         <option value="Patna">
         <option value="Lucknow">
         </datalist>
-      <label>{{sp.destination}}</label>
+
   </div>
 </div>
 
@@ -73,7 +68,7 @@ SEARCH FLIGHT
   </div>
     <div class="col-75">
     <input type="date" placeholder="From" name="dateOfFlight" style="background-color:whitesmoke" [(ngModel)]=sp.dateOfFlight>
-      <label>{{sp.dateOfFlight}}</label>
+ 
     </div>
 </div>
     
@@ -82,9 +77,8 @@ SEARCH FLIGHT
         <label for="numberOfPassengers"><h3>NUMBER OF PASSENGERS</h3></label>
       </div>
         <div class="col-75">
-        <input type="number" name="numberOfPassengers"  max = "6" [(ngModel)]=sp.numberOfPassengers>
+        <input type="number" name="numberOfPassengers" min="1" max = "6" [(ngModel)]=sp.numberOfPassengers>
         
-      <label>{{sp.numberOfPassengers}}</label>
   </div>
     </div>
 
@@ -99,7 +93,7 @@ SEARCH FLIGHT
         <option value="economy">
         <option value="business">
       </datalist>
-      <label>{{sp.cabinSelected}}</label>
+    
       <br>
     </div>
   </div>
@@ -118,25 +112,36 @@ SEARCH FLIGHT
 
   <br>
   <br>
-<table *ngIf="data" border="1" align="center">
-    <tr>
-      <th>Flight Number</th>
-      <th>Duration</th>
-      <th>Departure Schedule</th>
-      <th>Arival Schedule</th>
-      <th>Economy Fare</th>
-      <th>Business Fare</th>
-      <th>Select</th>
-    </tr>
-    <tr *ngFor="let d of data">
-      <td>{{ d.flightNumber }}</td>
-      <td>{{ d.duration }}</td>
-      <td>{{ d.departureSchedule }}</td>
-      <td>{{ d.arrivalSchedule }}</td>
-      <td>{{ d.initialEconomyfare }}</td>
-      <td>{{ d.initialBusinessfare }}</td>
-       <td><button (click)= "selectFlight(d)">Check this Flight</button></td>
-  </table>
+  <ng-template #elseBlock>No Flights on that date.</ng-template>
+  <div *ngIf="data; else elseBlock" border="1" align="center">
+    <div *ngFor="let d of data">
+<div class="ticket">
+<div class="row">
+  <div class="column">
+    <div class="card">Flight Number <br><br>{{ d.flightNumber }}<br><br><br><br></div><br>
+  </div>
+  <div class="column">
+    <div class="card">Duration <br><br> {{ d.duration }} hr<br><br><br><br><br></div><br>
+  </div>
+  <div class="column">
+    <div class="card">Departure Schedule<br><br> {{ d.departureSchedule }}<br><br><br></div>
+  </div>
+  <div class="column">
+    <div class="card">Arival Schedule <br>&nbsp;&nbsp;<br> {{ d.arrivalSchedule }}<br><br><br><br></div>
+  </div>
+  <div class="column">
+    <div class="card">Economy Fare <br>&nbsp;&nbsp;<br> {{ d.initialEconomyfare }}<br><br><br><br></div>
+  </div>
+  <div class="column">
+    <div class="card">Business Fare <br>&nbsp;&nbsp;<br> {{ d.initialBusinessfare }}<br><br><br><br></div>
+  </div>
+  <div class="column">
+    <div class="card"><button (click)= "selectFlight(d)" class="him2">Select Flight</button><br><br><br><br><br></div>
+  </div>
+</div>
+  </div> 
+  </div>
+  </div>
     <br><br>
     <router-outlet></router-outlet>
     <br>

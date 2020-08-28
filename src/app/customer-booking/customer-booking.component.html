@@ -1,3 +1,44 @@
+<div *ngIf="loggedin">
+  <h3>{{name}}</h3>
+  <button class="logout" type="button" (click)="logout()">Logout</button>
+  </div>
+<br>
+
+<br>
+<div class="disp">
+  <div class="bor">
+      <br>
+      <br>
+  </div>
+  <h2>&nbsp; 
+     {{ d.flightNumber }}
+     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+      {{sp.source}}
+      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+        {{sp.destination}} &nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+      {{fare}}₹
+  </h2>
+  <h3>&nbsp; 
+      {{sp.cabinSelected }}
+      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+      {{ d.departureSchedule.toString() }}
+       &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+       {{ d.arrivalSchedule }}&nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+       {{d.duration}} Hrs
+   </h3> 
+      
+    <h4 *ngFor="let x of len">
+      &nbsp;Passenger No:{{ x }}  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;
+      &nbsp; {{ pass[x].name }} &nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  Age: {{ pass[x].age }}&nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;   &nbsp;     &nbsp;    &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;    &nbsp;   &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+     
+      Seat No: {{selectedSeats[x]}}
+      </h4>
+
+   
+</div>
+
+
+
 <div>
   <form>
   <div class="plane">
@@ -346,16 +387,17 @@
     </div>
   
     <div>
-      <h4>Selected Seats-- In case you want to select again, Reset Below.</h4>
-      <label *ngFor="let x of selectedSeats;">
-        <h3>{{x}}</h3>
-      </label>
+      <h4 style=" padding-left : 35%">Selected Seats-- In case you want to select again, Reset Below.</h4>
+      <h4 style=" padding-left : 35%">Your seat numbers are visible on the top with the customer name</h4>
     </div>
 
     <div>
      <button type="submit" class="ball" (click)="goToTicket()">Submit</button>
+     <br>
       <button type="button" class="ball" (click)="resetFunction()">Reset</button>
     </div>
     </form>
    <router-outlet></router-outlet>
+   <br>
+   <br>
    </div>

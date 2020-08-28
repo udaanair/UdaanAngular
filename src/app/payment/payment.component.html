@@ -1,18 +1,54 @@
-<div class="bg-img">      
+
+<div class="bg-img">
+  <br>
+<div class="disp">
+  <div class="bor">
+      <br>
+      <br>
+  </div>
+  <h2>&nbsp; 
+     {{ d.flightNumber }}
+     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+      {{sp.source}}
+      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+        {{sp.destination}} &nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+      {{fare}}₹
+  </h2>
+  <h3>&nbsp; 
+      {{sp.cabinSelected }}
+      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+      {{ d.departureSchedule.toString() }}
+       &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+       {{ d.arrivalSchedule }}&nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+       {{d.duration}} Hrs
+   </h3> 
+      
+   <h4 *ngFor="let x of len">
+    &nbsp;Passenger No:{{ x }}  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;
+    &nbsp; {{ pass[x].name }} &nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  Age: {{ pass[x].age }}&nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;   &nbsp;     &nbsp;    &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;    &nbsp;   &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+   
+    Seat No: {{selectedSeats[x]}}
+    </h4>
+
+   
+</div>
+<br>
+<div>      
             <form (ngSubmit)="ticket()" method="POST" >
            
              <div class="container">
+               
                <h1 style=" color: white" >Payment details</h1>
                <p style=" color: white">Enter payment details</p>
                <hr>
                <label for="cardNo"><b>Debit Card Number</b></label>
-               <input type="text" placeholder="Enter Debit CardNo" required>
+               <input type="text" placeholder="Enter Debit CardNo" maxlength= "12" required>
             
                <label for="expiry"><b>Expiry Date</b></label>
                <input type="text" placeholder="Enter Expiry Date"  required>
                
                <label for="CVV"><b>CVV</b></label>
-               <input type="password" placeholder="Enter CVV" required>
+               <input type="password" placeholder="Enter CVV" maxlength= "3" required>
            
            
              
@@ -23,4 +59,13 @@
            
              
            </form>
+     
+          
+             
+      
+          
            </div>
+<br>
+<br>
+<br>
+       </div>

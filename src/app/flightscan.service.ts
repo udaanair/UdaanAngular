@@ -10,6 +10,10 @@ import { addNewFlight } from './addnewflight';
 import { AdminLogin } from './adminlogin';
 import { AdminLoginResult } from './adminloginresult';
 import { addUser } from './addUser';
+import { IdForFlightCancel } from './idForFlightCancel';
+import { UserLogin } from './userlogin';
+import { UserLoginResult } from './userloginresult';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -46,6 +50,12 @@ export class FlightscanService {
     return this.http.post<AdminLoginResult>(url,al);
   }
 
+  userLoginVerification(al: UserLogin):Observable<UserLoginResult>
+  {
+    const url="http://localhost:8080/userLogin.api";
+    return this.http.post<UserLoginResult>(url,al);
+  }
+
   fetchAllFlights()
   {
     return this.http.get("http://localhost:8080/fetchFlights.api");
@@ -55,5 +65,11 @@ export class FlightscanService {
   {
     const url="http://localhost:8080/addUser.api";
     return this.http.post(url,au);
+  }
+
+  cancelflight(iffc: IdForFlightCancel)
+  {
+    const url="http://localhost:8080/cancelFlight.api";
+    return this.http.post(url,iffc);
   }
 }

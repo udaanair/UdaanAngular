@@ -15,10 +15,12 @@ export class UserRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   getUser()
   {
     this.service.insertNewUser(this.user).subscribe( data=>{
       alert(JSON.stringify(data));
+      this.router.navigate(['login']);
     }
   );
   }

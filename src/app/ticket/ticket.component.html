@@ -1,42 +1,49 @@
-<h3>Flight Details</h3>
-
-<table  border="1" align="center">
-    <tr>
-      <th>Flight Number</th>
-      <th>Duration</th>
-      <th>Departure Schedule</th>
-      <th>Arival Schedule</th>
-      
-      
-    </tr>
-    <tr>
-      <td>{{ d.flightNumber }}</td>
-      <td>{{ d.duration }}</td>
-      <td>{{ d.departureSchedule }}</td>
-      <td>{{ d.arrivalSchedule }}</td>
-      </tr>
-      
-  </table>
-
+<div *ngIf="loggedin">
+  <h3>{{name}}</h3>
+  <button type="button" (click)="logout()">Logout</button>
+  </div>
+<div class="bim">
 <br>
-<h3>Your PNR is {{pnr.pnrGenerated}}</h3>
-<br><br>
-<h3>Passenger Details</h3>
-  <table  border="1" align="center" style="text-align: center;">
-    <tr>
-      <th>Passenger Name</th>
-      <th>Passenger Age</th>
-      <th>Passenger Seat No.</th>
+<div class="disp">
+
+  <div class="bor">
+    <br>
+    <br>
+  </div>
+  <h2>&nbsp; 
+     {{ d.flightNumber }}
+     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+      {{sp.source}}
+      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+        {{sp.destination}} &nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+      {{fare}}₹
+  </h2>
+  <h3>&nbsp; 
+      {{sp.cabinSelected }}
+      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+      {{ d.departureSchedule.toString() }}
+       &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+       {{ d.arrivalSchedule }}&nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+       {{d.duration}} Hrs
+   </h3> 
+      
+   <h4 *ngFor="let x of len">
+    &nbsp;Passenger No:{{ x }}  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;
+    &nbsp; {{ pass[x].name }} &nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  Age: {{ pass[x].age }}&nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;   &nbsp;     &nbsp;    &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;    &nbsp;   &nbsp; &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
    
-      
-      
-    </tr>
-    <tr  *ngFor="let x of len">
-      <td>{{ pass[x].name }}</td>
-      <td>{{ pass[x].age }}</td>
-      <td>{{ selectedSeats[x] }}</td>
-       </tr>
-      
-  </table>
-  
-  <h5>Print this page as your ticket.</h5>
+    Seat No: {{selectedSeats[x]}}
+    </h4>
+
+    <h2 class="same">   &nbsp;    &nbsp;  &nbsp;  PNR Number: {{pnr.pnrGenerated}}</h2> &nbsp;    &nbsp;  &nbsp;   &nbsp;    &nbsp;  &nbsp;   &nbsp;    &nbsp;  &nbsp;   &nbsp;    &nbsp;  &nbsp;   &nbsp;    &nbsp;  &nbsp; 
+      <h4 class = "same" style=" color:red;
+    font-family: Times New Roman, Times, serif; "> <i> Gate closes 40 minutes before boarding time.</i></h4>
+
+
+   
+</div>
+<br>
+
+<b style="padding-left: 40%;">Print this and use as ticket</b>
+<br>
+<br>
+</div>

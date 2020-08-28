@@ -10,10 +10,28 @@ import { Router } from '@angular/router';
 })
 export class SearchFlightComponent{
 
+  loggedin: boolean=false;
+  name: string;
   data: any;
   sp: SearchParameters=new SearchParameters;
   
-  constructor(private service: FlightscanService,private router: Router) { }
+  constructor(private service: FlightscanService,private router: Router) {
+
+    if(sessionStorage.getItem("username")!=null)
+    {
+      this.name=sessionStorage.getItem("username");
+      this.loggedin=true;
+    }
+   }
+
+  logout()
+  {
+    this.loggedin=false;
+    sessionStorage.clear();
+    this.router.navigate(['searchflight']);
+  }
+
+
 
   getFlights(){
     this.service.fetchflights(this.sp).subscribe(
@@ -24,11 +42,8 @@ export class SearchFlightComponent{
   }
   bookingamount:number;
   selectFlight(d:any) {
-        //  this.data.getFlights.
-        alert(d.flightNumber);
        let numberOfPassengers =this.sp.numberOfPassengers;
-        //let customerName = data.name;
-        //let obj = {id : customerId, name : customerName};
+       
         if(this.sp.cabinSelected=="economy")
         {
         this.bookingamount=numberOfPassengers*d.initialEconomyfare;
@@ -37,14 +52,21 @@ export class SearchFlightComponent{
         {
         this.bookingamount=numberOfPassengers*d.initialBusinessfare;
         }
-        alert(this.bookingamount);
         sessionStorage.setItem("bookingamount",String(this.bookingamount));
        sessionStorage.setItem('numberOfPassengers', String(numberOfPassengers));
        sessionStorage.setItem('cabinType',this.sp.cabinSelected);
-     //  sessionStorage.setItem('flightNumber',this.data[1]);
        sessionStorage.setItem('selectedflight',JSON.stringify(d));
-        
-    this.router.navigate(['booking']); 
+       sessionStorage.setItem('searchparam',JSON.stringify(this.sp));
+       if(sessionStorage.getItem("username")!=null)
+        {
+      	  this.router.navigate(['booking']); 
+        }
+        else
+        {
+          alert("Register first");
+          this.router.navigate(['register']);
+        }
+    
       
     }
   }

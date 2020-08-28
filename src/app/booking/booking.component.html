@@ -1,22 +1,69 @@
-<div><h2><u>PASSENGER DETAILS</u></h2></div>
-
-<br>
-{{d.flightId}}
+<div *ngIf="loggedin">
+    <h3>{{name}}</h3>
+    <button type="button" (click)="logout()">Logout</button>
+    </div>
 
 <div>
-<form >
-    <label *ngFor="let x of Np;">
-        <label>Passenger {{x}}: </label><br>
-        <label>NAME: </label><input type="text" id="name" name="name" [(ngModel)]=passengerList[x].name><br>
-         <br>
-         {{passengerList[x].name}}
-        <label>AGE: </label><input type="number" id="quantity" name="quantity"  min="1" max="100" [(ngModel)]=passengerList[x].age><br>
-        {{passengerList[x].age}}
-    </label>
-  
+
+<br>
+<div class = "bing">
+
     <br>
-   <br>
-    <input type="submit" value="Submit"  (click)= "passenger()">
+    <br>
+  
+    <div class="disp">
+        <div class="bor">
+            <br>
+            <br>
+        </div>
+        <h2>&nbsp; 
+           {{ d.flightNumber }}
+           &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+            {{sp.source}}
+            &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+              {{sp.destination}} &nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+            {{fare}}₹
+        </h2>
+        <h3>&nbsp; 
+            {{sp.cabinSelected }}
+            &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;      &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+            {{ d.departureSchedule.toString() }}
+             &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+             {{ d.arrivalSchedule }}&nbsp;    &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;
+             {{d.duration}} Hrs
+         </h3>
+    </div>
+      <br><br>
+      <router-outlet></router-outlet>
+      <br>
+      <br>
+  </div>
+  
+<div class=fl>
+<br>
+<br>
+<div class="container">
+<form style="opacity: 100%;">
+    <label *ngFor="let x of Np;">
+        <br>
+        <br>
+        <label>PASSENGER {{x}} </label>
+        <label>NAME: </label><input type="text" placeholder= " Enter Name" id="name" name="name" [(ngModel)]=passengerList[x].name><br>
+         
+      
+         
+        <label>AGE: </label><input type="number" id="quantity" placeholder=" Enter Age" name="quantity"  min="1" max="100" [(ngModel)]=passengerList[x].age><br>
+      
+        <br>
+    </label>
+    <input type="submit" value="SUBMIT"  (click)= "passenger()">
+
+<br>
 </form>
+<br>
 <router-outlet></router-outlet>
+</div>
+<br>
+<br>
+</div>
 </div>

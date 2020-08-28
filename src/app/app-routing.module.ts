@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SeatSelectionComponent } from './seat-selection/seat-selection.component';
 import { SearchFlightComponent } from './search-flight/search-flight.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
   {path:'login', component: UserLoginComponent},
   {path:'register', component: UserRegistrationComponent},
   {path:'adminlogin', component: AdminLoginComponent},
-  {path:'seatselection', component: SeatSelectionComponent},
   {path:'customerbooking', component: CustomerBookingComponent},
   {path:'booking', component: BookingComponent},
   {path:'addflight', component: AddFlightComponent},

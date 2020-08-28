@@ -5,6 +5,7 @@ import { FlightscanService } from './../flightscan.service';
 import { BookingRecord } from './../bookingrecord';
 import { CustomerRecord } from '../customerrecord';
 import { PnrAfterBooking } from '../pnrafterbooking';
+import { SearchParameters } from '../searchparameters';
 
 @Component({
   selector: 'app-ticket',
@@ -12,7 +13,8 @@ import { PnrAfterBooking } from '../pnrafterbooking';
   styleUrls: ['./ticket.component.css']
 })
 export class TicketComponent implements OnInit {
-
+  loggedin: boolean=false;
+  name: string;
   booking: BookingRecord=new BookingRecord();
   customer: CustomerRecord[]=[];
 
@@ -25,16 +27,27 @@ export class TicketComponent implements OnInit {
   d: any;
   pass: passengerClass[]=[];
   len: number[]=[];
+  
+  tf : number;
+  sp: SearchParameters=new SearchParameters;
 
   EachCustomerFare: number;
   totalFare: number;
+  fare: number;
   constructor(private service: FlightscanService,private router: Router) {
+    if(sessionStorage.getItem("username")!=null)
+    {
+      this.name=sessionStorage.getItem("username");
+      this.loggedin=true;
+    }
     this.d= JSON.parse(sessionStorage.getItem('selectedflight'));
     this.selectedSeats = JSON.parse(sessionStorage.getItem("selectedseats"));
     this.pass= JSON.parse(sessionStorage.getItem('passengerlist')); 
     this.numberOfPassengers = Number(sessionStorage.getItem('numberOfPassengers'));
 
     this.totalFare=Number(sessionStorage.getItem("bookingamount"));
+    this.sp= JSON.parse(sessionStorage.getItem('searchparam'));
+    this.tf = this.numberOfPassengers * this.totalFare;
 
     this.booking.cabinClass=sessionStorage.getItem("cabinType");
     //alert(this.booking.cabinClass);
@@ -48,7 +61,7 @@ export class TicketComponent implements OnInit {
       this.EachCustomerFare=this.d.initialBusinessfare;
     }
     //alert(this.EachCustomerFare);
-    this.booking.userId=9648557255;
+    this.booking.userId=Number(sessionStorage.getItem("username"));
     //alert(this.booking.userId);
     this.booking.bookingAmount=Number(sessionStorage.getItem("bookingamount"));
    // alert(this.booking.bookingAmount);
@@ -75,7 +88,6 @@ export class TicketComponent implements OnInit {
     this.service.completeBooking(this.booking).subscribe(
       data=>{
        this.pnr= data;
-       alert(this.pnr.status);
     alert("your PNR is "+this.pnr.pnrGenerated);
     sessionStorage.setItem("pnr",String(this.pnr.pnrGenerated));
       }
@@ -89,7 +101,12 @@ export class TicketComponent implements OnInit {
       this.len.push(i);  }
      // alert(this.pass[2].name);
   }
-   
+  logout()
+  {
+    this.loggedin=false;
+    sessionStorage.clear();
+    this.router.navigate(['searchflight']);
+  }
 
   ngOnInit(): void {
   }
